@@ -1,0 +1,26 @@
+questions = [
+    {"q": "Capital of India?", "a": "Delhi"},
+    {"q": "5 + 7 = ?", "a": "12"},
+    {"q": "Python is a ___?", "a": "programming language"}
+]
+
+def quiz():
+    score = 0
+    for q in questions:
+        ans = input(q["q"] + " ")
+        if ans.lower() == q["a"].lower():
+            score += 1
+
+    print("Score:", score, "/", len(questions))
+
+def main():
+    while True:
+        print("\n1.Play Quiz 2.Exit")
+        ch = input("Choice: ")
+
+        if ch == "1":
+            quiz()
+        else:
+            break
+
+main()
