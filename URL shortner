@@ -1,0 +1,31 @@
+import random
+import string
+
+url_db = {}
+
+def generate_code():
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=6))
+
+def shorten_url():
+    long_url = input("Enter URL: ")
+    code = generate_code()
+    url_db[code] = long_url
+    print("Short URL: http://short.ly/" + code)
+
+def access_url():
+    code = input("Enter short code: ")
+    if code in url_db:
+        print("Original URL:", url_db[code])
+    else:
+        print("URL not found")
+
+def main():
+    while True:
+        print("\n1.Shorten 2.Access 3.Exit")
+        ch = input("Choice: ")
+
+        if ch == "1": shorten_url()
+        elif ch == "2": access_url()
+        elif ch == "3": break
+
+main()
