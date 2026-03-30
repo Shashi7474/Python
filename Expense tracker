@@ -1,0 +1,27 @@
+import matplotlib.pyplot as plt
+
+expenses = {}
+
+def add_expense():
+    category = input("Category: ")
+    amount = float(input("Amount: "))
+    expenses[category] = expenses.get(category, 0) + amount
+
+def show_chart():
+    plt.pie(expenses.values(), labels=expenses.keys(), autopct="%1.1f%%")
+    plt.title("Expenses")
+    plt.show()
+
+def main():
+    while True:
+        print("\n1.Add Expense 2.Show Chart 3.Exit")
+        ch = input("Choice: ")
+
+        if ch == "1":
+            add_expense()
+        elif ch == "2":
+            show_chart()
+        else:
+            break
+
+main()
