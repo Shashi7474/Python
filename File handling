@@ -1,0 +1,31 @@
+def write_file():
+    with open("data.txt", "w") as f:
+        data = input("Enter text: ")
+        f.write(data)
+    print("Data written!\n")
+
+def read_file():
+    try:
+        with open("data.txt", "r") as f:
+            print("File content:\n", f.read())
+    except FileNotFoundError:
+        print("File not found!\n")
+
+def append_file():
+    with open("data.txt", "a") as f:
+        data = input("Enter text to append: ")
+        f.write("\n" + data)
+    print("Data appended!\n")
+
+while True:
+    print("1.Write 2.Read 3.Append 4.Exit")
+    choice = int(input("Enter choice: "))
+    
+    if choice == 1:
+        write_file()
+    elif choice == 2:
+        read_file()
+    elif choice == 3:
+        append_file()
+    elif choice == 4:
+        break
