@@ -1,0 +1,33 @@
+cart = {}
+
+def add_item():
+    name = input("Item name: ")
+    price = float(input("Price: "))
+    qty = int(input("Quantity: "))
+    cart[name] = {"price": price, "qty": qty}
+
+def remove_item():
+    name = input("Item to remove: ")
+    if name in cart:
+        del cart[name]
+
+def show_cart():
+    total = 0
+    for item, details in cart.items():
+        cost = details["price"] * details["qty"]
+        total += cost
+        print(item, details, "Cost:", cost)
+    print("Total:", total)
+
+while True:
+    print("\n1.Add 2.Remove 3.Show 4.Exit")
+    ch = int(input("Choice: "))
+
+    if ch == 1:
+        add_item()
+    elif ch == 2:
+        remove_item()
+    elif ch == 3:
+        show_cart()
+    elif ch == 4:
+        break
