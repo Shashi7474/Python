@@ -1,0 +1,43 @@
+# BFS (Uses Queue)
+from collections import deque
+
+def bfs(graph, start):
+    visited = set()
+    queue = deque([start])
+    result = []
+
+    while queue:
+        node = queue.popleft()
+        if node not in visited:
+            visited.add(node)
+            result.append(node)
+            queue.extend(graph[node])
+
+    return result
+
+
+# DFS (Uses Recursion / Stack)
+def dfs(graph, node, visited=None):
+    if visited is None:
+        visited = set()
+
+    visited.add(node)
+    result = [node]
+
+    for neighbor in graph[node]:
+        if neighbor not in visited:
+            result.extend(dfs(graph, neighbor, visited))
+
+    return result
+
+
+if __name__ == "__main__":
+    graph = {
+        0: [1, 2],
+        1: [2],
+        2: [0, 3],
+        3: []
+    }
+
+    print("BFS:", bfs(graph, 2))
+    print("DFS:", dfs(graph, 2))
