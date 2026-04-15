@@ -1,0 +1,35 @@
+"""
+DFS vs Backtracking
+DFS → traverse graph
+Backtracking → explore all solutions with undo
+"""
+
+# DFS
+def dfs(graph, node, visited=None):
+    if visited is None:
+        visited = set()
+
+    visited.add(node)
+    print(node, end=" ")
+
+    for n in graph[node]:
+        if n not in visited:
+            dfs(graph, n, visited)
+
+
+# Backtracking (generate subsets)
+def subsets(nums, path=[], res=[]):
+    res.append(path)
+
+    for i in range(len(nums)):
+        subsets(nums[i+1:], path + [nums[i]], res)
+
+    return res
+
+
+if __name__ == "__main__":
+    graph = {0:[1,2], 1:[], 2:[]}
+    print("DFS:")
+    dfs(graph, 0)
+
+    print("\nBacktracking:", subsets([1,2,3]))
