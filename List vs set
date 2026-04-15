@@ -1,0 +1,17 @@
+"""
+List vs Set
+List → ordered, allows duplicates
+Set → unordered, unique elements
+"""
+
+# List
+lst = [1, 2, 2, 3]
+print("List:", lst)
+
+# Set
+st = set(lst)
+print("Set:", st)
+
+# Membership check
+print("List search:", 2 in lst)
+print("Set search:", 2 in st)
