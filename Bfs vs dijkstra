@@ -1,0 +1,54 @@
+"""
+BFS vs Dijkstra
+BFS → shortest path in unweighted graph
+Dijkstra → shortest path in weighted graph
+"""
+
+from collections import deque
+import heapq
+
+# BFS
+def bfs(graph, start):
+    visited = set()
+    queue = deque([(start, 0)])
+
+    while queue:
+        node, dist = queue.popleft()
+        if node not in visited:
+            print(node, "distance:", dist)
+            visited.add(node)
+            for neighbor in graph[node]:
+                queue.append((neighbor, dist + 1))
+
+
+# Dijkstra
+def dijkstra(graph, start):
+    pq = [(0, start)]
+    dist = {node: float('inf') for node in graph}
+    dist[start] = 0
+
+    while pq:
+        current_dist, node = heapq.heappop(pq)
+
+        for neighbor, weight in graph[node]:
+            d = current_dist + weight
+            if d < dist[neighbor]:
+                dist[neighbor] = d
+                heapq.heappush(pq, (d, neighbor))
+
+    return dist
+
+
+if __name__ == "__main__":
+    graph1 = {0:[1,2], 1:[2], 2:[3], 3:[]}
+    graph2 = {
+        'A':[('B',1),('C',4)],
+        'B':[('C',2),('D',5)],
+        'C':[('D',1)],
+        'D':[]
+    }
+
+    print("BFS:")
+    bfs(graph1, 0)
+
+    print("\nDijkstra:", dijkstra(graph2, 'A'))
