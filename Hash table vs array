@@ -1,0 +1,13 @@
+"""
+Hash Table vs Array
+Array → index-based access
+Hash → key-based fast lookup
+"""
+
+# Array
+arr = [10, 20, 30]
+print("Array index 1:", arr[1])
+
+# Hash Table (Dictionary)
+hash_table = {"a": 10, "b": 20, "c": 30}
+print("Hash key 'b':", hash_table["b"])
