@@ -1,0 +1,29 @@
+"""
+Greedy vs Brute Force
+Greedy → local best choice
+Brute Force → tries all possibilities
+"""
+
+# Greedy (max number of items within capacity)
+def greedy(weights, cap):
+    weights.sort()
+    total = 0
+    count = 0
+    for w in weights:
+        if total + w <= cap:
+            total += w
+            count += 1
+    return count
+
+# Brute Force
+def brute(weights, cap, i=0):
+    if i == len(weights):
+        return 0
+    take = 0
+    if weights[i] <= cap:
+        take = 1 + brute(weights, cap - weights[i], i+1)
+    skip = brute(weights, cap, i+1)
+    return max(take, skip)
+
+print("Greedy:", greedy([4,2,1,5], 7))
+print("Brute:", brute([4,2,1,5], 7))
