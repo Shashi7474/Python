@@ -1,0 +1,15 @@
+"""
+Mutable vs Immutable
+Mutable → can change (list)
+Immutable → cannot change (tuple, int)
+"""
+
+# Mutable
+lst = [1,2,3]
+lst[0] = 10
+print("Mutable list:", lst)
+
+# Immutable
+x = 10
+x = 20  # new object created
+print("Immutable int:", x)
