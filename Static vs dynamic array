@@ -1,0 +1,15 @@
+"""
+Static vs Dynamic Array
+Static → fixed size
+Dynamic → resizable (Python list)
+"""
+
+# Static-like (fixed)
+arr = [0]*5
+print("Static:", arr)
+
+# Dynamic
+dyn = []
+dyn.append(10)
+dyn.append(20)
+print("Dynamic:", dyn)
