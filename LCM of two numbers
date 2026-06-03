@@ -1,0 +1,10 @@
+a = int(input())
+b = int(input())
+
+gcd = a
+temp = b
+
+while temp:
+    gcd, temp = temp, gcd % temp
+
+print((a * b) // gcd)
