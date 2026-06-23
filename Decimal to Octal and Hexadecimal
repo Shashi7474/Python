@@ -1,0 +1,4 @@
+n = int(input())
+
+print("Octal:", oct(n)[2:])
+print("Hex:", hex(n)[2:].upper())
