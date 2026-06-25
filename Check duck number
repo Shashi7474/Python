@@ -1,0 +1,6 @@
+n = input()
+
+if '0' in n and n[0] != '0':
+    print("Duck Number")
+else:
+    print("Not Duck Number")
