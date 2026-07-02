@@ -1,0 +1,15 @@
+import math
+
+n = int(input())
+temp = n
+s = 0
+
+while temp > 0:
+    d = temp % 10
+    s += math.factorial(d)
+    temp //= 10
+
+if s == n:
+    print("Strong Number")
+else:
+    print("Not Strong Number")
