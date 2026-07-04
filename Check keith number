@@ -1,0 +1,11 @@
+n = int(input())
+digits = [int(i) for i in str(n)]
+k = len(digits)
+
+while digits[-1] < n:
+    digits.append(sum(digits[-k:]))
+
+if digits[-1] == n:
+    print("Keith Number")
+else:
+    print("Not Keith Number")
