@@ -1,0 +1,7 @@
+s1 = input()
+s2 = input()
+
+for ch in s1:
+    if ch not in s2:
+        print(ch)
+        break
