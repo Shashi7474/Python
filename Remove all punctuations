@@ -1,0 +1,8 @@
+import string
+
+s = input()
+
+for ch in string.punctuation:
+    s = s.replace(ch, "")
+
+print(s)
