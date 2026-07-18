@@ -1,0 +1,8 @@
+n = input()
+
+freq = {}
+
+for d in n:
+    freq[d] = freq.get(d, 0) + 1
+
+print(freq)
