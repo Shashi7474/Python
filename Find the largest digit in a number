@@ -1,0 +1,5 @@
+n = input()
+
+largest = max(n)
+
+print("Largest digit:", largest)
