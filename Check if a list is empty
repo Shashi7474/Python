@@ -1,0 +1,6 @@
+lst = []
+
+if not lst:
+    print("Empty List")
+else:
+    print("Not Empty")
