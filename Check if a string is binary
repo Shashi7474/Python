@@ -1,0 +1,6 @@
+s = input()
+
+if all(ch in "01" for ch in s):
+    print("Binary String")
+else:
+    print("Not a Binary String")
