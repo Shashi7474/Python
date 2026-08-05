@@ -1,0 +1,12 @@
+n = int(input())
+
+a = [list(map(int, input().split())) for _ in range(n)]
+
+flag = True
+
+for i in range(n):
+    for j in range(n):
+        if a[i][j] != a[j][i]:
+            flag = False
+
+print("Symmetric" if flag else "Not Symmetric")
