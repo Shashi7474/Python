@@ -1,0 +1,18 @@
+arr = list(map(int, input().split()))
+target = int(input())
+
+current = 0
+start = 0
+
+for end in range(len(arr)):
+    current += arr[end]
+
+    while current > target and start <= end:
+        current -= arr[start]
+        start += 1
+
+    if current == target:
+        print(start, end)
+        break
+else:
+    print("Not Found")
