@@ -1,0 +1,12 @@
+def my_map(func, values):
+    result = []
+
+    for value in values:
+        result.append(func(value))
+
+    return result
+
+
+numbers = [1, 2, 3, 4]
+
+print(my_map(lambda x: x * x, numbers))
