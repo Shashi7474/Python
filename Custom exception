@@ -1,0 +1,16 @@
+class InsufficientBalance(Exception):
+    pass
+
+
+balance = 1000
+withdraw = int(input())
+
+try:
+    if withdraw > balance:
+        raise InsufficientBalance("Insufficient balance")
+
+    balance -= withdraw
+    print("Remaining:", balance)
+
+except InsufficientBalance as e:
+    print(e)
