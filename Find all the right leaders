@@ -1,0 +1,11 @@
+arr = list(map(int, input().split()))
+
+leaders = []
+maximum = float('-inf')
+
+for x in reversed(arr):
+    if x > maximum:
+        leaders.append(x)
+        maximum = x
+
+print(leaders[::-1])
