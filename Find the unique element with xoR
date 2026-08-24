@@ -1,0 +1,8 @@
+arr = list(map(int, input().split()))
+
+result = 0
+
+for x in arr:
+    result ^= x
+
+print(result)
