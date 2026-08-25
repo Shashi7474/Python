@@ -1,0 +1,31 @@
+def generate(open_count, close_count, current, result, n):
+
+    if len(current) == 2 * n:
+        result.append(current)
+        return
+
+    if open_count < n:
+        generate(
+            open_count + 1,
+            close_count,
+            current + "(",
+            result,
+            n
+        )
+
+    if close_count < open_count:
+        generate(
+            open_count,
+            close_count + 1,
+            current + ")",
+            result,
+            n
+        )
+
+
+n = int(input())
+result = []
+
+generate(0, 0, "", result, n)
+
+print(result)
