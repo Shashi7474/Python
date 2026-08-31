@@ -1,0 +1,7 @@
+from collections import Counter
+
+sentence = input().lower().split()
+
+frequency = Counter(sentence)
+
+print(frequency.most_common(1)[0][0])
