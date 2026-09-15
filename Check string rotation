@@ -1,0 +1,7 @@
+a = "ABCD"
+b = "CDAB"
+
+if len(a) == len(b) and b in a + a:
+    print("Rotation")
+else:
+    print("Not Rotation")
