@@ -1,0 +1,13 @@
+employees = [
+    {"name": "A", "salary": 30000},
+    {"name": "B", "salary": 50000},
+    {"name": "C", "salary": 40000},
+    {"name": "D", "salary": 50000}
+]
+
+salaries = sorted(
+    {e["salary"] for e in employees},
+    reverse=True
+)
+
+print(salaries[1])
