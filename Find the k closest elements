@@ -1,0 +1,9 @@
+arr = [1, 2, 3, 4, 5]
+k = 3
+x = 4
+
+arr.sort(key=lambda n: abs(n - x))
+
+result = sorted(arr[:k])
+
+print(result)
